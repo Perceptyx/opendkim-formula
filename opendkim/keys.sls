@@ -13,7 +13,7 @@ include:
     - makedirs: True
     - user: {{ opendkim_settings.lookup.user }}
     - group: {{ opendkim_settings.lookup.group }}
-    - file_mode: 0600
+    - file_mode: 600
     - dir_mode: 750
     - makedirs: True
     - recurse:
@@ -29,7 +29,7 @@ include:
     - contents_pillar: opendkim:keys:{{ name }}
     - user: {{ opendkim_settings.lookup.user }}
     - group: {{ opendkim_settings.lookup.group }}
-    - file_mode: 0600
+    - mode: 600
     - require:
       - pkg: opendkim
 {% endfor %}
